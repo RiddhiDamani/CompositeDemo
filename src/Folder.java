@@ -2,11 +2,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Folder implements IFileSystemItem { 
-	private final String name;
-	private final List<IFileSystemItem> children;
+	private String name;
+	private List<IFileSystemItem> children = new ArrayList<IFileSystemItem>();
 	
-	Folder(String name) {
-		children = new ArrayList<>();
+	public Folder(String name) {
+//		children = new ArrayList<>();
 		this.name = name;
 	}
 	
@@ -21,6 +21,12 @@ public class Folder implements IFileSystemItem {
 			size += child.getSize();
 		}
 		return size;
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return name;
 	}
 
 }
